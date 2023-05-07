@@ -18,10 +18,11 @@ else:
 # Allow the player to submit a guess for a number between 1 and 100
 def game():
     the_guess = random.randint(1, 100)
+    end_of_game = False
 
     remaining_guesses = num_guesses
         
-    while remaining_guesses > 0:
+    while not end_of_game:
         print(f"You have {remaining_guesses} remaining.")
         user = int(input("pick a number between 1 and 100:"))
         if user > the_guess:
@@ -32,6 +33,8 @@ def game():
             print(f"You got it! the answer was {the_guess}")
         
     remaining_guesses -= 1
+    if remaining_guesses == 0:
+        end_of_game = True
         
         
 print(game())

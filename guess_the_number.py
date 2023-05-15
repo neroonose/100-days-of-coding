@@ -49,4 +49,4 @@ play_again = input("Do you want to play again? Type 'Y' or 'N':")
 if play_again == "Y":
     game()
 elif play_again == "N":
-    exit()
+    return

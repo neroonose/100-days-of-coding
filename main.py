@@ -2,12 +2,12 @@ from art import logo
 from game_data import data
 import random
 
-data_len = len(data)
+the_game = (data[random.randint(0, len(data))])
 
-num = random.randint(0, data_len)
+name = the_game['name']
+no_of_followers = the_game['follower_count']
+desc = the_game['description']
+country = the_game['country']
 
-the_game = (data[num])
-
-for i in the_game:
-    print(i)
+print(f"{name}, a {desc} from {country}.")
 

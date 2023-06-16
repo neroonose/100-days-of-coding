@@ -1,5 +1,5 @@
 # TODO 1: write menu
-MENU = {
+menu = {
     "espresso": {
         "ingredients": {
             "water": 50,
@@ -25,25 +25,33 @@ MENU = {
     }
 }
 
-# TODO 1: Ask what the user want
+resources = {"water": 300,
+           "milk": 200 ,
+           "coffee": 100}
 
-customer_wants = input("What would you like? (espresso/latte/cappuccino):").lower()
-
-coffee_machine = False
+coffee_machine = True
 total = 0
-def coffee_type():
-    customer_wants = input("What would you like? (espresso/latte/cappuccino):").lower()
-
+profit = 0
 
 def payment():
+    """To collect the coins for coffee"""
     print("please insert coins.")
     total += (int(input("how many quarters?:"))) * 0.25
     total += (int(input("how many dimes?:"))) * 0.1
     total += (int(input("how many pennies?:"))) * 0.01
     total += (int(input("how many nickles?:"))) * 0.05
+    return total
 
 
-
-    # if customer_wants == "off":
-    #     coffee_machine = True
-    # coffee_machine = True
+while coffee_machine:
+    """Running the machine"""
+    customer_wants = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    if customer_wants == "report":
+        print(f"Water : {resources['water']}ml")
+        print(f"Milk : {resources['milk']}ml")
+        print(f"Coffee : {resources['coffee']}g")
+        print(f"Money : ${profit}")
+    elif customer_wants == "off":
+        coffee_machine = False
+    else: 
+        choosen_drink = (menu[customer_wants])

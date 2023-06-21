@@ -47,11 +47,14 @@ while coffee_machine:
     """Running the machine"""
     customer_wants = input("What would you like? (espresso/latte/cappuccino): ").lower()
     if customer_wants == "report":
+        """to show the remaining resources"""
         print(f"Water : {resources['water']}ml")
         print(f"Milk : {resources['milk']}ml")
         print(f"Coffee : {resources['coffee']}g")
         print(f"Money : ${profit}")
     elif customer_wants == "off":
+        """turn off the machine"""
         coffee_machine = False
     else: 
-        choosen_drink = (menu[customer_wants])
+        chosen_drink = (menu[customer_wants])
+

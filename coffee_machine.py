@@ -91,4 +91,3 @@ while coffee_machine:
             payment = process_coins()
             if is_transaction_successful(payment, chosen_drink["cost"]):
                 make_coffee(customer_wants, chosen_drink["ingredients"])
-

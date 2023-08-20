@@ -11,7 +11,6 @@ data = pandas.read_csv("us-states-game-start\\50_states.csv")
 states = data.state.to_list()
 score = 0
 correct_guesses = []
-states_to_learn = []
 while len(correct_guesses) < 50:
     answer = screen.textinput(title=f"{score}/50 Guess the State", prompt="What's another state's name?")
     answer_state = answer.title()
@@ -26,10 +25,8 @@ while len(correct_guesses) < 50:
         t.write(answer_state)
         score += 1
         correct_guesses.append(answer_state)
+missing_states = [state for state in states if state not in correct_guesses]
 
-for _ in states:
-    if _ not in correct_guesses:
-        states_to_learn.append(_)  
 
-df = pandas.DataFrame(states_to_learn)
+df = pandas.DataFrame(missing_states)
 df.to_csv("us-states-game-start\\states_to_learn_csv")

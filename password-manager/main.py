@@ -5,7 +5,6 @@ import pyperclip
 
 #----------- Password Generator-------- #
 
-#Password Generator Project
 def gen_paswrd():
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -75,15 +74,6 @@ add.grid(column=1, columnspan=2, row=4)
 
 generate_pswrd = Button(text="Generate Password", command=gen_paswrd)
 generate_pswrd.grid(column=2,row=3)
-
-
-
-
-
-
-
-
-
 
 
 window.mainloop()
